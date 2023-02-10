@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
   spec.has_rdoc      = 'yard'
 
   spec.add_runtime_dependency 'multi_json', '~> 1.11'
-  spec.add_runtime_dependency 'hurley', '~> 0.1'
+  spec.add_runtime_dependency 'faraday', '~> 1.10.3'
+  spec.add_runtime_dependency 'faraday-net_http', '~> 2.1.0'
   spec.add_runtime_dependency 'retriable', '~> 2.0'
 end
