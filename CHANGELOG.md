@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0
+
+* Update ruby version to 3.0.0
+* Update dependencies
+* Replace Hurley with Faraday
+
 ## 0.4.2
 
 * Add nearest roads Google Roads API support
