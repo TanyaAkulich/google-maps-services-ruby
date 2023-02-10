@@ -4,18 +4,18 @@ source 'https://rubygems.org'
 gemspec
 
 group :development do
-  gem 'bundler'
-  gem 'rake'
-  gem 'rspec'
-  gem 'simplecov'
-  gem 'coveralls'
-  gem 'webmock'
+  gem 'bundler', '~> 2.4', '>= 2.4.6'
+  gem 'rake', '~> 13.0', '>= 13.0.6'
+  gem 'rspec', '~> 3.12'
+  gem 'simplecov', '~> 0.16.1'
+  gem 'coveralls', '~> 0.8.22'
+  gem 'webmock', '~> 3.18', '>= 3.18.1'
 end
 
 platforms :ruby do
   group :development do
-    gem 'yard'
-    gem 'redcarpet'
+    gem 'yard', '~> 0.9.28'
+    gem 'redcarpet', '~> 3.6'
   end
 end
 
