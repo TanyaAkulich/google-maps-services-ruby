@@ -33,7 +33,7 @@ module GoogleMapsService
     # @param [Hash, Array<Array>] params The parameters
     # @return [String]
     def urlencode_params(params)
-      unquote_unreserved(URI.encode_www_form(params))
+      unquote_unreserved(URI.encode_www_form(params).gsub('+', '%20'))
     end
 
     # Un-escape any percent-escape sequences in a URI that are unreserved
