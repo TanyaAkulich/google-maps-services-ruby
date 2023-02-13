@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.1
+
+* [Google Maps Web Service API](https://developers.google.com/maps/documentation/webservices/) scope:
+    - [Place API](https://developers.google.com/maps/documentation/places/web-service)
+
 ## 0.5.0
 
 * Update ruby version to 3.0.0

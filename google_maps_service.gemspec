@@ -22,4 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'faraday', '~> 2.7'
   spec.add_runtime_dependency 'faraday-net_http', '~> 3.0'
   spec.add_runtime_dependency 'retriable', '~> 3.1'
+  spec.add_runtime_dependency 'pry'
 end
