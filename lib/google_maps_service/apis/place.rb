@@ -28,7 +28,7 @@ module GoogleMapsService::Apis
     # @return [Array] Array of candidates.
     def find_place(input, input_type, fields: [], language: nil, location_bias: nil)
       params = {
-        input: input,
+        input: input.gsub('+', '%20'),
         inputtype: input_type,
       }
 
@@ -131,7 +131,7 @@ module GoogleMapsService::Apis
       type: nil
     )
 
-      params = { query: query }
+      params = { query: query.gsub('+', '%20') }
       params[:radius] = radius if radius
       params[:language] = language if language
       params[:location] = location if location
@@ -190,7 +190,7 @@ module GoogleMapsService::Apis
     # @example Return the referenced image, resizing it so that it is at most 400 pixels wide.
     #   result = client.place_photos(
     #     'Aap_uEA7vb0DDYVJWEaX3O-AtYp77AaswQKSGtDaimt3gt7QCNpdjp1BkdM6acJ96xTec3tsV_ZJNL_JP-lqsVxydG3nh739RE_hepOOL05tfJh2_ranjMadb3VoBYFvF0ma6S24qZ6QJUuV6sSRrhCskSBP5C1myCzsebztMfGvm7ij3gZT',
-    #     maxwidth: 400
+    #     max_width: 400
     #   )
     #
     # @param [String] photo_reference A string identifier that uniquely identifies a photo. Photo references
@@ -199,13 +199,13 @@ module GoogleMapsService::Apis
     # @param [Integer] max_width Specifies the maximum desired width, in pixels, of the image.
     #
     # @return [Array] Array of photos.
-    def place_photos(photo_reference, max_height: nil, max_width: nil)
-      params = { photo_reference: photo_reference }
-      params[:maxheight] = max_height if max_height
-      params[:maxwidth] = max_width if max_width
+    # def place_photos(photo_reference, max_height: nil, max_width: nil)
+    #   params = { photo_reference: photo_reference }
+    #   params[:maxheight] = max_height if max_height
+    #   params[:maxwidth] = max_width if max_width
 
-      get('/maps/api/place/photo', params)
-    end
+    #   get('/maps/api/place/photo', params)
+    # end
 
     # Returns place predictions
     # @example Returns results for establishments containing the string "Amoeba" within an area centered in
@@ -260,7 +260,7 @@ module GoogleMapsService::Apis
       types: nil
     )
 
-      params = { input: input }
+      params = { input: input.gsub('+', '%20') }
       params[:radius] = radius if radius
       params[:components] = components if components
       params[:language] = language if language
@@ -297,7 +297,7 @@ module GoogleMapsService::Apis
     #
     # @return [Array] Array of predictions.
     def query_autocomplete(input, radius: nil, language: nil, location: nil, offset: nil)
-      params = { input: input }
+      params = { input: input.gsub('+', '%20') }
       params[:radius] = radius if radius
       params[:language] = language if language
       params[:location] = location if location
